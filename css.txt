@@ -1,0 +1,107 @@
+Perfect question! Let me explain. 🎯
+
+---
+
+## Normal CSS you know:
+
+```css
+#chat-box {
+    background: #1a1a2e;
+}
+
+.message {
+    color: white;
+}
+```
+
+`#` = id selector
+`.` = class selector
+
+---
+
+## `:root` is different
+
+`:root` is not an id or class — it's a **special selector** that means the **entire page.**
+
+Think of it like:
+```
+#chat-box  → targets one specific box
+.message   → targets all message divs
+:root      → targets the WHOLE page
+```
+
+`:root` is just used as a **storage place** for variables. Nothing else. You don't style anything inside it — you just store values.
+
+---
+
+## Without variables — the problem
+
+Imagine you use the same color in 10 places:
+
+```css
+#chat-box { background: #0f0f1a; }
+body { background: #0f0f1a; }
+header { background: #0f0f1a; }
+```
+
+Tomorrow you want to change that color → you have to change it in **10 places** 😫
+
+---
+
+## With variables — the solution
+
+```css
+:root {
+    --bg-color: #0f0f1a;  /* stored once here */
+}
+
+#chat-box { background: var(--bg-color); }  /* used here */
+body { background: var(--bg-color); }       /* used here */
+header { background: var(--bg-color); }     /* used here */
+```
+
+Tomorrow you change color → change **only in `:root`** → updates everywhere! ✅
+
+---
+
+## Syntax rules for variables
+
+**Declaring** a variable — inside `:root`:
+```css
+--variable-name: value;
+```
+Must start with `--` always.
+
+**Using** a variable — anywhere in CSS:
+```css
+property: var(--variable-name);
+```
+Wrap it in `var()` always.
+
+---
+
+## Real example for your project
+
+```css
+/* Storing */
+:root {
+    --bg-color: #0f0f1a;
+}
+
+/* Using */
+body {
+    background: var(--bg-color);
+}
+```
+
+---
+
+## Summary
+
+| Syntax | What it does |
+|--------|-------------|
+| `:root { }` | Storage room for whole page |
+| `--name: value` | Creating a variable |
+| `var(--name)` | Using that variable |
+
+Now write your `:root` block with those 6 color variables I gave you! Paste back when done! 👇
