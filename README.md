@@ -1,1 +1,1 @@
-https://chatbot-api.manogna255.workers.dev/
+https://chatbot-gen-ai.manogna255.workers.dev/
